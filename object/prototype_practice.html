@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Objeect</title>
+  <style>
+    .card  {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 150px;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    /* 개별 밸류 + 공통기능 불러오는 init */
+    function Card(num, color) {
+      this.num = num;
+      this.color = color;
+      this.init();
+    }
+    
+    /* 공통기능을 모아둔 prototype */
+    Card.prototype = {
+      constructor : Card,
+      init: function () {
+        const mainElem = document.createElement('div');
+        mainElem.style.color = this.color;
+        mainElem.innerHTML = this.num;
+        mainElem.classList.add('card');
+        document.body.appendChild(mainElem)
+      }
+    }
+    /* 카드를 생성만 해도 init 메소드가 작동하면서 dom html이 구성된다*/
+    const card1 = new Card(1, 'green');
+    const card2 = new Card(7, 'blue');
+    const card3 = new Card(10, 'red');
+    
+  </script>
+</body>
+</html>

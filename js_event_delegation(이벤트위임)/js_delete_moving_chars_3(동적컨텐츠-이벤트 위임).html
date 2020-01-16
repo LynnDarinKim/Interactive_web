@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/02_03.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="menu">
+        <!-- <button class="button menu-btn" data-value="1">
+          <img src="../images/ilbuni/ilbuni_1.png" alt="" class="icon">
+          <span class="btn-label">일분이 1</span>
+        </button>
+        <button class="button menu-btn" data-value="2">
+          <img src="../images/ilbuni/ilbuni_2.png" alt="" class="icon">
+          <span class="btn-label">일분이 2</span>
+        </button>
+        <button class="button menu-btn" data-value="3">
+          <img src="../images/ilbuni/ilbuni_3.png" alt="" class="icon">
+          <span class="btn-label">일분이 3</span>
+        </button> -->
+      </div>
+    </div>
+  </section>
+  <script>
+    const menu = document.querySelector('.menu');
+    
+    function clickHandler(e) {
+      // console.log(e.target.getAttribute('data-value'));
+      let elem = e.target;
+      while (!elem.classList.contains('menu-btn')) {
+        elem = elem.parentNode; /* 부모노드 타고올라가기 */
+        if(elem.nodeName == 'BODY'){
+          elem = null;
+          return;
+        }
+      }
+      console.log(elem.dataset.value);
+      
+    }
+    
+    menu.addEventListener('click', clickHandler);
+    
+    window.addEventListener('click', () =>  {
+      const htmlStr = `<button class="button menu-btn" data-value="1">
+        <img src="../images/ilbuni/ilbuni_1.png" alt="" class="icon">
+        <span class="btn-label">일분이 1</span>
+      </button>
+      <button class="button menu-btn" data-value="2">
+        <img src="../images/ilbuni/ilbuni_2.png" alt="" class="icon">
+        <span class="btn-label">일분이 2</span>
+      </button>
+      <button class="button menu-btn" data-value="3">
+        <img src="../images/ilbuni/ilbuni_3.png" alt="" class="icon">
+        <span class="btn-label">일분이 3</span>
+      </button>`;
+      menu.innerHTML = htmlStr;
+    })
+    
+  </script>
+</body>
+</html>

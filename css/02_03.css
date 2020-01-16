@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  padding: 2em;
+  background: #eee;
+}
+
+.btn-label {
+  /* pointer-events: none; */
+  /* does not take the click event 
+  클릭 인식 안되게 하기 */
+}
+
+.icon {
+  /* pointer-events: none; */
+}

@@ -1,0 +1,53 @@
+.stage {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 75vw;
+  background: #fff000;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(70vw);
+  }
+}
+
+.ilbuni {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  animation: moving 3s infinite alternate;
+}
+
+.ilbuni:nth-of-type(1) {
+  left: 10%;
+  bottom: 5%;
+  background-image: url('../images/ilbuni/ilbuni_0.png');
+  animation-duration: 4s;
+}
+.ilbuni:nth-of-type(2) {
+  left: 0%;
+  bottom: 10%;
+  background-image: url('../images/ilbuni/ilbuni_1.png');
+  animation-duration: 5s;
+}
+.ilbuni:nth-of-type(3) {
+  left: 7%;
+  bottom: 3%;
+  background-image: url('../images/ilbuni/ilbuni_2.png');
+  animation-duration: 6s;
+  
+}
+.ilbuni:nth-of-type(4) {
+  left: 3%;
+  bottom: 10%;
+  background-image: url('../images/ilbuni/ilbuni_3.png');
+  animation-duration: 7s;
+}
+
